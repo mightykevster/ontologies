@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://harmonyhome.com/ontology/pet#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://harmonyhome.com/ontology/pet"/>
+
+    <!-- Classes (Nodes) for Pets -->
+    <owl:Class rdf:about="#Pet">
+        <rdfs:label>Pet</rdfs:label>
+        <rdfs:comment>Represents a family pet, such as a dog, cat, or fish.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#Veterinarian">
+        <rdfs:label>Veterinarian</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://harmonyhome.com/ontology/base#Person"/>
+        <rdfs:comment>A specific type of Person who is a veterinarian.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#MedicalRecord">
+        <rdfs:label>MedicalRecord</rdfs:label>
+        <rdfs:comment>Represents a medical record for a pet, like a vaccination history.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties (Relationships) for Pets -->
+    <owl:ObjectProperty rdf:about="#OWNED_BY">
+        <rdfs:label>OWNED_BY</rdfs:label>
+        <rdfs:domain rdf:resource="#Pet"/>
+        <rdfs:range rdf:resource="http://harmonyhome.com/ontology/base#Person"/>
+        <rdfs:comment>Indicates that a Pet is owned by a Person.</rdfs:comment>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#HAS_VETERINARIAN">
+        <rdfs:label>HAS_VETERINARIAN</rdfs:label>
+        <rdfs:domain rdf:resource="#Pet"/>
+        <rdfs:range rdf:resource="#Veterinarian"/>
+        <rdfs:comment>Connects a Pet to their veterinarian.</rdfs:comment>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="#HAS_RECORD">
+        <rdfs:label>HAS_RECORD</rdfs:label>
+        <rdfs:domain rdf:resource="#Pet"/>
+        <rdfs:range rdf:resource="#MedicalRecord"/>
+        <rdfs:comment>Connects a Pet to one of its medical records.</rdfs:comment>
+    </owl:ObjectProperty>
+</rdf:RDF>
