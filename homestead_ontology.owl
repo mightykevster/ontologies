@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://harmonyhome.com/ontology/homestead#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://harmonyhome.com/ontology/homestead"/>
+
+    <!-- Classes (Nodes) for Homesteading -->
+    <owl:Class rdf:about="#Animal">
+        <rdfs:label>Animal</rdfs:label>
+        <rdfs:comment>Represents a domesticated animal on a homestead, like a chicken or goat.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#Crop">
+        <rdfs:label>Crop</rdfs:label>
+        <rdfs:comment>Represents a plant or crop being cultivated.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#Schedule">
+        <rdfs:label>Schedule</rdfs:label>
+        <rdfs:comment>Represents a recurring schedule for tasks like feeding or watering.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties (Relationships) for Homesteading -->
+    <owl:ObjectProperty rdf:about="#FEEDS">
+        <rdfs:label>FEEDS</rdfs:label>
+        <rdfs:domain rdf:resource="http://harmonyhome.com/ontology/base#Person"/>
+        <rdfs:range rdf:resource="#Animal"/>
+        <rdfs:comment>Indicates a person feeds an animal.</rdfs:comment>
+    </owl:ObjectProperty>
+</rdf:RDF>
