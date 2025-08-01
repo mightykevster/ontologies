@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://harmonyhome.com/ontology/base#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://harmonyhome.com/ontology/base"/>
+
+    <!-- Classes (Nodes) -->
+    <owl:Class rdf:about="#Person">
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:comment>Represents a human individual.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#Location">
+        <rdfs:label>Location</rdfs:label>
+        <rdfs:comment>Represents a physical place.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties (Relationships) -->
+    <owl:ObjectProperty rdf:about="#LIVES_IN">
+        <rdfs:label>LIVES_IN</rdfs:label>
+        <rdfs:domain rdf:resource="#Person"/>
+        <rdfs:range rdf:resource="#Location"/>
+        <rdfs:comment>Indicates that a person resides in a location.</rdfs:comment>
+    </owl:ObjectProperty>
+</rdf:RDF>
