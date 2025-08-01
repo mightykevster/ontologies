@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://harmonyhome.com/ontology/finance#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://harmonyhome.com/ontology/finance"/>
+
+    <!-- Classes (Nodes) for Finance -->
+    <owl:Class rdf:about="#Account">
+        <rdfs:label>Account</rdfs:label>
+        <rdfs:comment>Represents a financial account, like a bank account or credit card.</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="#Transaction">
+        <rdfs:label>Transaction</rdfs:label>
+        <rdfs:comment>Represents a single financial transaction.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Properties (Relationships) for Finance -->
+    <owl:ObjectProperty rdf:about="#HAS_ACCOUNT">
+        <rdfs:label>HAS_ACCOUNT</rdfs:label>
+        <rdfs:domain rdf:resource="http://harmonyhome.com/ontology/base#Person"/>
+        <rdfs:range rdf:resource="#Account"/>
+        <rdfs:comment>Indicates a person has a financial account.</rdfs:comment>
+    </owl:ObjectProperty>
+</rdf:RDF>
